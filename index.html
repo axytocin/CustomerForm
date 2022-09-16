@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find us everywhere as box.script</title>
+    <!-- normalize-css -->
+    <link rel="stylesheet" href="vendors/css/normalize.css">
+    <!-- stylesheet -->
+    <link rel="stylesheet" href="resources/css/style.css">
+    <!-- jquery-3 -->
+    <script src="vendors/js/jquery-3.6.1.js"></script>
+    <!-- PERSIAN DATEPICKER -->
+    <link rel="stylesheet" href="vendors/css/persian-datepicker.css">
+    <script src="vendors/js/persian-date.js"></script>
+    <script src="vendors/js/persian-datepicker.js"></script>
+</head>
+<body>
+   <div class="container">
+        <form action="mailto:heidarianarash@gmail.com" method="post" enctype="text/plain">
+            <ul class="flex-outer">
+                <h3>مشخصات فردی</h3>
+                <li class="required">
+                    <label for="fname">نام</label>
+                    <input type="text" id="fname" placeholder="ممد" required>
+                </li>
+                <li class="required">
+                    <label for="lname">نام خانوادگی</label>
+                    <input type="text" id="lname" placeholder="محمدی" required>
+                </li>
+                <li class="required">
+                    <label for="birthdate">تاریخ تولد</label>
+                    <input type="text" class="birthdate" id="birthdate" placeholder="" value="1375-01-01" required>
+                </li>
+                <li class="required">
+                    <label for="idcode">کد ملی</label>
+                    <input type="text" maxlength="10" id="idcode" placeholder="کد ملی 10 رقمی" required>
+                </li>
+                <li class="required">
+                    <label for="phonenum">شماره تلفن همراه</label>
+                    <input type="tel" id="phonenum" placeholder="09121232313" required>
+                </li>
+                <li class="required">
+                    <label for="telnum">شماره تلفن ثابت</label>
+                    <input type="tel" id="telnum" placeholder="کد شهر + شماره تلفن" required>
+                </li>
+                <li>
+                    <label for="telnum">شماره تلفن ثابت محل کار</label>
+                    <input type="tel" id="telnum" placeholder="کد شهر + شماره تلفن">
+                </li>
+                <li class="required">
+                    <label for="address">آدرس منزل</label>
+                    <input type="text" id="address" placeholder="شهر، منطقه و خیابان محل سکونت" required>
+                </li>
+                <li>
+                    <label for="address2">آدرس محل کار</label>
+                    <input type="text" id="address2" placeholder="شهر، منطقه و خیابان محل کار">
+                </li>
+                <li class="required">
+                    <label for="postalcode">کد پستی</label>
+                    <input type="text" maxlength="16" id="postalcode" placeholder="کد پستی 16 رقمی" required>
+                </li>
+                <li>
+                    <label for="postalcode">کد پستی محل کار</label>
+                    <input type="text" maxlength="16" id="postalcode" placeholder="کد پستی 16 رقمی">
+                </li>
+                <h3>مشخصات پروژه</h3>
+                <li class="required">
+                    <label for="projectname">نام وبسایت</label>
+                    <input type="text" id="projectname" placeholder="هرچی خودت دوست داری" required>
+                </li>
+                <li class="required">
+                    <label for="domain">دامنه مورد نظر</label>
+                    <input type="text" id="domain" placeholder="www.test.com" required>
+                </li>
+                <li>
+                    <p>نوع وبسایت</p>
+                    <ul class="flex-inner">
+                        <li>
+                            <input type="checkbox" id="check1">
+                            <label for="check1">فروشگاهی</label>
+                        </li>
+                        <li>
+                            <input type="checkbox" id="check2">
+                            <label for="check2">خبری</label>
+                        </li>
+                        <li>
+                            <input type="checkbox" id="check3">
+                            <label for="check3">بلاگ</label>
+                        </li>
+                        <li>
+                            <input type="checkbox" id="check4">
+                            <label for="check4">شخصی</label>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <label for="competitor">وبسایت های مشابه</label>
+                    <textarea name="competitor" id="competitor" rows="6"></textarea>
+                </li>
+                <li>
+                    <label for="more">قابلیت های دیگر</label>
+                    <textarea name="more" id="more" rows="6"></textarea>
+                </li>
+                <li>
+                    <input type="submit" name="submit" id="submit" value="ثبت">
+                </li>
+            </ul>
+        </form>
+        <script type="text/javascript">
+            $(document).ready(function() {
+            $(".birthdate").pDatepicker({
+                initialValueType: 'persian',
+                observer: true,
+                format: 'YYYY/MM/DD',
+                altField: '.observer-example-alt',
+                "autoClose": true,
+                "toolbox": {
+                    "enabled": false},
+                checkYear: function(year){
+                    return year <= 1383;}
+            });
+            });
+        </script>
+   </div>
+</body>
+</html>
